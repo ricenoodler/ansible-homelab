@@ -1,0 +1,30 @@
+---
+- name: Check available updates
+  hosts: proxmox,vms
+  become: true
+  tasks:
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: List upgradable packages
+      shell: apt list --upgradable 2>/dev/null
+      register: upgradable
+
+    - name: Show available updates
+      debug:
+        msg: "{{ upgradable.stdout_lines }}"
+
+- name: Check available updates on Oracle VPS
+  hosts: oracle-vps
+  become: true
+  tasks:
+
+    - name: Update apt cache and list upgradable
+      shell: apt update -qq && apt list --upgradable 2>/dev/null
+      register: upgradable
+
+    - name: Show available updates
+      debug:
+        msg: "{{ upgradable.stdout_lines }}"
