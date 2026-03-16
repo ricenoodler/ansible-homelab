@@ -38,8 +38,8 @@ cp inventory.example.ini inventory.ini
 
 | Playbook | Hosts | Description |
 |----------|-------|-------------|
+| `check-updates.yml` | all | Preview available updates without installing |
 | `update.yml` | all | Full apt update and dist-upgrade across all hosts |
-| `health-check.yml` | all | Reports disk usage, memory, and uptime per host |
 | `health-check.yml` | all | Reports disk usage, memory, and uptime per host |
 ## Design Decisions
 
