@@ -1,13 +1,1 @@
-[proxmox]
-proxmox ansible_host=YOUR_PROXMOX_IP ansible_user=root
-
-[vms]
-debiandelmundo ansible_host=YOUR_DEBIAN_IP ansible_user=root
-vaultwardenvm ansible_host=YOUR_VAULTWARDEN_IP ansible_user=root
-monitorvm ansible_host=YOUR_MONITOR_IP ansible_user=ansible
-
-[external]
-oracle-vps ansible_host=YOUR_ORACLE_IP ansible_user=YOUR_USER ansible_ssh_private_key_file=YOUR_KEY_PATH ansible_python_interpreter=/usr/local/bin/python3.10
-
-[all:vars]
-ansible_python_interpreter=/usr/bin/python3
+inventory.ini
