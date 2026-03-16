@@ -40,7 +40,7 @@ cp inventory.example.ini inventory.ini
 |----------|-------|-------------|
 | `update.yml` | all | Full apt update and dist-upgrade across all hosts |
 | `health-check.yml` | all | Reports disk usage, memory, and uptime per host |
-
+| `health-check.yml` | all | Reports disk usage, memory, and uptime per host |
 ## Design Decisions
 
 - **Dedicated ansible user** on MonitorVM instead of root or a personal account,
