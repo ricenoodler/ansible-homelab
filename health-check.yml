@@ -1,0 +1,29 @@
+---
+- name: Health Check
+  hosts: all
+  become: true
+  tasks:
+
+    - name: Check disk space
+      shell: df -h /
+      register: disk_usage
+
+    - name: Check memory usage
+      shell: free -h
+      register: memory_usage
+
+    - name: Check uptime
+      shell: uptime
+      register: uptime_info
+
+    - name: Show disk space
+      debug:
+        msg: "{{ disk_usage.stdout }}"
+
+    - name: Show memory usage
+      debug:
+        msg: "{{ memory_usage.stdout }}"
+
+    - name: Show uptime
+      debug:
+        msg: "{{ uptime_info.stdout }}"
