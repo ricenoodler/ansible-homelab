@@ -1,0 +1,16 @@
+---
+- name: Update local systems
+  hosts: proxmox,vms
+  become: true
+  tasks:
+    - name: Update apt cache and upgrade packages
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+- name: Update Oracle VPS
+  hosts: oracle-vps
+  become: true
+  tasks:
+    - name: Update apt cache and upgrade packages
+      shell: apt update && apt dist-upgrade -y
